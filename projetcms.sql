@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : ven. 14 jan. 2022 à 11:38
+-- Généré le : ven. 14 jan. 2022 à 11:44
 -- Version du serveur : 5.7.33
 -- Version de PHP : 7.4.19
 
@@ -481,7 +481,7 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (13, 1, 'wp_user_level', '10'),
 (14, 1, 'dismissed_wp_pointers', ''),
 (15, 1, 'show_welcome_panel', '1'),
-(16, 1, 'session_tokens', 'a:1:{s:64:\"3de1c3fb33b4e02ca2a16cd026055153eca54930acb626ab1afeb616d0920f36\";a:4:{s:10:\"expiration\";i:1643364593;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:114:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36\";s:5:\"login\";i:1642154993;}}'),
+(16, 1, 'session_tokens', 'a:2:{s:64:\"3de1c3fb33b4e02ca2a16cd026055153eca54930acb626ab1afeb616d0920f36\";a:4:{s:10:\"expiration\";i:1643364593;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:114:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36\";s:5:\"login\";i:1642154993;}s:64:\"715099188f8c7ee0f21557f438c93f6197c83dc189a36ddc230f5672982eb6a7\";a:4:{s:10:\"expiration\";i:1642333416;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:114:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36\";s:5:\"login\";i:1642160616;}}'),
 (17, 1, 'wp_dashboard_quick_press_last_post_id', '4'),
 (18, 1, 'community-events-location', 'a:1:{s:2:\"ip\";s:9:\"127.0.0.0\";}'),
 (19, 1, 'closedpostboxes_acf-field-group', 'a:1:{i:0;s:23:\"acf-field-group-options\";}'),
@@ -499,8 +499,8 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (31, 2, 'use_ssl', '0'),
 (32, 2, 'show_admin_bar_front', 'true'),
 (33, 2, 'locale', ''),
-(34, 2, 'wp_capabilities', 'a:1:{s:10:\"subscriber\";b:1;}'),
-(35, 2, 'wp_user_level', '0'),
+(34, 2, 'wp_capabilities', 'a:1:{s:13:\"administrator\";b:1;}'),
+(35, 2, 'wp_user_level', '10'),
 (36, 2, 'dismissed_wp_pointers', '');
 
 -- --------------------------------------------------------
