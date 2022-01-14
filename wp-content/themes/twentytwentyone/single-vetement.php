@@ -9,13 +9,27 @@ if ( have_posts() ) {
      the_post();
         
 ?>
-    <div>
-        <h1><?php the_title(); ?> </h1>
-        <img src="<?php the_post_thumbnail_url();?>" alt="">
-        <h3><?php the_terms( get_the_ID() , 'marque' );?></h3>    
-        <h4>Prix :<?php the_field('prix'); ?> € TVA incluse</h4>
-        <?php the_field('taillle'); ?>
-    </div><?php
+        <div class="card container mb-3 " >
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="<?php the_post_thumbnail_url();?>" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="text-center col-md-8 gx-5 gy-5">
+                    <div class=" card-body">
+                        <h5 class="card-title"><?php the_terms( get_the_ID() , 'marque' ); ?></h5>
+                        <p class="card-text"><?php the_title();?><br> <strong>Taille: </strong> <?php the_field('taillle'); ?></p>
+                        <p class="card-text"><small class="text-muted"></small></p>
+                        <p style="font-size: 26px;"><?php the_field('prix'); echo ' '. get_field_object('prix', get_the_ID())['append']; ?></p>
+                        <div class="row">
+                            <a name="" id="" class="btn btn-dark" href="#" role="button">Ajouter au panier</a>
+                        </div>
+                    </div>
+                    <div class="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php
     }
 
     // Previous/next page navigation.
