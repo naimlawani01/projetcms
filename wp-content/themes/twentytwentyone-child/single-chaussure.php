@@ -17,14 +17,31 @@ if ( have_posts() ) {
                 <div class="text-center col-md-8 gx-5 gy-5">
                     <div class=" card-body">
                         <h5 class="card-title"><?php the_terms( get_the_ID() , 'marque' ); ?></h5>
-                        <p class="card-text"><?php the_title();?><br> <strong>Taille: </strong> <?php the_field('taille'); ?></p>
+                        <p class="card-text"><?php the_title();?><br></p>
+                            <?php 
+                                $tailles = get_field('taille', get_the_ID());
+                            ?>
+                            <div class="row">
+                                <div class="col-md-6 offset-md-3">
+
+                                    <select class="form-control" name="" id="">
+                                        <option value="" >Taille</option>
+                                        <?php foreach($tailles as $taille): ?>
+                                            <option  value=" <?php $taille ?>"><?= $taille ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                            </div>
                         <p class="card-text"><small class="text-muted"></small></p>
                         <p style="font-size: 26px;"><?php the_field('prix'); echo ' '. get_field_object('prix', get_the_ID())['append']; ?></p>
-                        <div class="row">
-                            <a name="" id="" class="btn btn-dark" href="#" role="button">Ajouter au panier</a>
-                        </div>
+                        
                     </div>
-                    <div class="">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2">
+
+                            <a name="" id="" class="btn btn-dark btn-block" href="#" role="button">Ajouter au panier</a>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -33,7 +50,7 @@ if ( have_posts() ) {
     }
 
     // Previous/next page navigation.
-
+     get_template_part('template-parts/query-archiveproduit');
 
     } else {
 
@@ -41,5 +58,5 @@ if ( have_posts() ) {
 
 
     }
-
 get_footer();
+?>
