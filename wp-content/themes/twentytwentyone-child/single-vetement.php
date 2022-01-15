@@ -17,7 +17,7 @@ if ( have_posts() ) {
                 <div class="text-center col-md-8 gx-5 gy-5">
                     <div class=" card-body">
                         <h5 class="card-title"><?php the_terms( get_the_ID() , 'marque' ); ?></h5>
-                        <p class="card-text"><?php the_title();?><br> <strong>Taille: </strong> <?php the_field('taillle'); ?></p>
+                        <p class="card-text"><?php the_title();?><br> <strong>Taille: </strong> <?php the_field('taille'); ?></p>
                         <p class="card-text"><small class="text-muted"></small></p>
                         <p style="font-size: 26px;"><?php the_field('prix'); echo ' '. get_field_object('prix', get_the_ID())['append']; ?></p>
                         <div >
