@@ -3,6 +3,7 @@
 $arguments = [
     'post_type' => 'vetement',
     'post__not_in' => [get_the_ID()],
+    'orderby'        => 'rand',
     'posts_per_page'=>3,
     'tax_query' => [
         [
