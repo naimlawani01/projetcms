@@ -33,7 +33,7 @@ if ( have_posts() ) {
     }
 
     // Previous/next page navigation.
-
+     get_template_part('template-parts/query-archiveproduit');
 
     } else {
 
@@ -41,5 +41,4 @@ if ( have_posts() ) {
 
 
     }
-
 get_footer();

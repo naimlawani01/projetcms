@@ -1,4 +1,4 @@
-/* @charset "UTF-8";
+@charset "UTF-8";
 
 /*
 Theme Name: Twenty Twenty-One
@@ -5966,5 +5966,3 @@ footer {
 .is-IE .post-thumbnail .wp-post-image {
     min-width: auto;
 }
-
-*/
