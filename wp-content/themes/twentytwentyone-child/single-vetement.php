@@ -20,7 +20,7 @@ if ( have_posts() ) {
                         <p class="card-text"><?php the_title();?><br> <strong>Taille: </strong> <?php the_field('taillle'); ?></p>
                         <p class="card-text"><small class="text-muted"></small></p>
                         <p style="font-size: 26px;"><?php the_field('prix'); echo ' '. get_field_object('prix', get_the_ID())['append']; ?></p>
-                        <div class="row">
+                        <div >
                             <a name="" id="" class="btn btn-dark" href="#" role="button">Ajouter au panier</a>
                         </div>
                     </div>
