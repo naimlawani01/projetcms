@@ -38,10 +38,11 @@
                     </div>
             </header><!-- sect-heading -->
             <?php
-
+                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                 $arguments = [
                     'post_type' => 'chaussure',
                     'posts_per_page'=>-1,
+                    'paged' => $paged,
                     'tax_query' => [
                         [
                             'taxonomy' => 'genre',
@@ -91,11 +92,12 @@
 
             <nav class="mt-4" aria-label="Page navigation sample">
             <ul class="pagination">
-                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                <li class="page-item ">
+                    <?php
+                        previous_posts_link();
+                    ?>
+                 </li>
+                <li class="page-item"><?php next_posts_link(); ?></li>
             </ul>
             </nav>
 

@@ -39,9 +39,12 @@
             </header><!-- sect-heading -->
             <?php
 
+                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
                 $arguments = [
                     'post_type' => 'vetement',
                     'posts_per_page'=>10,
+                    'paged' => $paged,
                     'tax_query' => [
                         [
                             'taxonomy' => 'genre',
@@ -83,15 +86,19 @@
                 
                 <?php 
                     }
-                    var_dump(posts_nav_link()); // Après la boucle 
                 }
                 wp_reset_postdata();
+
                 ?>
             </div> <!-- row end.// -->
 
             <nav class="mt-4" aria-label="Page navigation sample">
             <ul class="pagination">
-                <li class="page-item "><?php previous_posts_link(); ?></li>
+                <li class="page-item ">
+                    <?php
+                        previous_posts_link();
+                    ?>
+                 </li>
                 <li class="page-item"><?php next_posts_link(); ?></li>
             </ul>
             </nav>
