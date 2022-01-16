@@ -43,7 +43,7 @@
 
                 $arguments = [
                     'post_type' => 'vetement',
-                    'posts_per_page'=>10,
+                    'posts_per_page'=>8,
                     'paged' => $paged,
                     'tax_query' => [
                         [
@@ -71,7 +71,7 @@
                 ?>
                     <a href="<?php the_permalink(); ?>?genre=<?= $_GET['genre'] ?>">
                         <div class="card border-0 col-lg-3 col-md-4 col-sm-6 py-2 py-2">
-                                <img class="card-img-top" height="300px" width="100%" src="<?php the_post_thumbnail_url();?>">
+                                <img class="card-img-top"  width="100%" src="<?php the_post_thumbnail_url();?>">
                             <div class="card-body">
                                 <h4 class="card-title" ><?php the_terms( get_the_ID() , 'marque' ); ?></h4>
                                 <p class="card-text"><?php the_title();?></p>
