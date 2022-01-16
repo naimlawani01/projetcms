@@ -41,7 +41,7 @@
 
                 $arguments = [
                     'post_type' => 'vetement',
-                    'posts_per_page'=>-1,
+                    'posts_per_page'=>7,
                     'tax_query' => [
                         [
                             'taxonomy' => 'genre',
@@ -83,6 +83,7 @@
                 
                 <?php 
                     }
+                    var_dump(posts_nav_link()); // Après la boucle 
                 }
                 wp_reset_postdata();
                 ?>

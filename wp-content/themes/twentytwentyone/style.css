@@ -102,7 +102,7 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 
 /* Variables */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: '"Muli', sans-serif;
+    font-size: 1rem;
 }
