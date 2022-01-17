@@ -18,7 +18,7 @@
 
 	<?php # get_template_part( 'template-parts/footer/footer-widgets' ); ?>
 
-	<footer id="colophon" class="page-footer font-small stylish-color-dark pt-4 site-footer bg-dark text-white" role="contentinfo">
+	<footer id="colophon" class="page-footer font-small stylish-color-dark pt-4 site-footer" role="contentinfo">
 		  <!-- Footer Links -->
 		<div class="container text-center text-md-left">
 			<!-- Grid row -->
@@ -169,14 +169,58 @@
 		<div class="footer-copyright text-center py-3">© 2020 Copyright:
 			<a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
 		</div>
+		<!-- Copyright -->
+		<?php if ( has_nav_menu( 'footer' ) ) : ?>
+			<nav aria-label="<?php esc_attr_e( 'Secondary menu', 'twentytwentyone' ); ?>" class="footer-navigation">
+				<ul class="footer-navigation-wrapper">
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'footer',
+							'items_wrap'     => '%3$s',
+							'container'      => false,
+							'depth'          => 1,
+							'link_before'    => '<span>',
+							'link_after'     => '</span>',
+							'fallback_cb'    => false,
+						)
+					);
+					?>
+				</ul><!-- .footer-navigation-wrapper -->
+			</nav><!-- .footer-navigation -->
+		<?php endif; ?>
+		<div class="site-info">
+			<div class="site-name">
+				<?php if ( has_custom_logo() ) : ?>
+					<div class="site-logo"><?php the_custom_logo(); ?></div>
+				<?php else : ?>
+					<?php if ( get_bloginfo( 'name' ) && get_theme_mod( 'display_title_and_tagline', true ) ) : ?>
+						<?php if ( is_front_page() && ! is_paged() ) : ?>
+							<?php bloginfo( 'name' ); ?>
+						<?php else : ?>
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+						<?php endif; ?>
+					<?php endif; ?>
+				<?php endif; ?>
+			</div><!-- .site-name -->
+			<div class="powered-by">
+				<?php
+				printf(
+					/* translators: %s: WordPress. */
+					esc_html__( 'Proudly powered by %s.', 'twentytwentyone' ),
+					'<a href="' . esc_url( __( 'https://wordpress.org/', 'twentytwentyone' ) ) . '">WordPress</a>'
+				);
+				?>
+			</div><!-- .powered-by -->
 
+		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

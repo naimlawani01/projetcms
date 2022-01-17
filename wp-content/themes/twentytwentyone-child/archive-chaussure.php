@@ -12,7 +12,75 @@
 </div> <!-- container //  -->
 </section>
 <!-- ========================= SECTION INTRO END// ========================= -->
+<?php
+if(isset($_GET['sortby']) && !empty($_GET['sortby'])){
+    if($_GET['sortby']== 'priceDesc'){
 
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+        
+        $arguments = [
+            'post_type' => 'chaussure',
+            'posts_per_page'=>8,
+            'orderby' => 'meta_value_num',
+            'meta_key' => 'prix',
+            'order' => 'DESC',
+            'paged' => $paged,
+            'tax_query' => [
+                [
+                    'taxonomy' => 'genre',
+                    'field' => 'slug',
+                    'terms' => [
+                        $_GET['genre']
+                    ]
+                ]
+            ]
+        ];
+        $produits = new WP_Query($arguments);
+    }elseif($_GET['sortby']== 'priceAsc'){
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+        
+        $arguments = [
+            'post_type' => 'chaussure',
+            'posts_per_page'=>8,
+            'orderby' => 'meta_value_num',
+            'meta_key' => 'prix',
+            'order' => 'ASC',
+            'paged' => $paged,
+            'tax_query' => [
+                [
+                    'taxonomy' => 'genre',
+                    'field' => 'slug',
+                    'terms' => [
+                        $_GET['genre']
+                    ]
+                ]
+            ]
+        ];
+        $produits = new WP_Query($arguments);
+    }
+}else{
+
+    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+    
+    $arguments = [
+        'post_type' => 'chaussure',
+        'posts_per_page'=>8,
+        'paged' => $paged,
+        'tax_query' => [
+            [
+                'taxonomy' => 'genre',
+                'field' => 'slug',
+                'terms' => [
+                    $_GET['genre']
+                ]
+            ]
+        ]
+    ];
+    $produits = new WP_Query($arguments);
+}
+
+
+?>
 <!-- ========================= SECTION CONTENT ========================= -->
 <section class="section-content padding-y">
 <div class="container">
@@ -22,41 +90,21 @@
 
             <header class="border-bottom mb-4 pb-3">
                     <div class="form-inline">
-                        <span class="mr-md-auto">32 Items found </span>
-                        <select class="mr-2 form-control">
-                            <option>Latest items</option>
-                            <option>Trending</option>
-                            <option>Most Popular</option>
-                            <option>Cheapest</option>
-                        </select>
-                        <div class="btn-group">
-                            <a href="#" class="btn btn-outline-secondary" data-toggle="tooltip" title="List view"> 
-                                <i class="fa fa-bars"></i></a>
-                            <a href="#" class="btn  btn-outline-secondary active" data-toggle="tooltip" title="Grid view"> 
-                                <i class="fa fa-th"></i></a>
-                        </div>
+                        <span class="mr-md-auto"></span>
+                        <div class="dropdown">
+                                <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Trier par
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="http://projetcms.test/chaussure/?genre=<?=$_GET['genre']?>">Les plus recents</a>
+                                    <a class="dropdown-item" href="http://projetcms.test/chaussure/?genre=<?=$_GET['genre']?>&sortby=priceDesc">Prix: Décroissant</a>
+                                    <a class="dropdown-item" href="http://projetcms.test/chaussure/?genre=<?=$_GET['genre']?>&sortby=priceAsc">Prix: Croissant</a>
+                                </div>
+                            </div>
+
                     </div>
             </header><!-- sect-heading -->
-            <?php
-                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                $arguments = [
-                    'post_type' => 'chaussure',
-                    'posts_per_page'=>-1,
-                    'paged' => $paged,
-                    'tax_query' => [
-                        [
-                            'taxonomy' => 'genre',
-                            'field' => 'slug',
-                            'terms' => [
-                                $_GET['genre']
-                            ]
-                        ]
-                    ]
-                ];
-                $produits = new WP_Query($arguments);
-                
-                
-            ?>
+           
             <div class="row">
                 <?php
 
@@ -88,9 +136,9 @@
                     }
                 }
                 wp_reset_postdata();
+
                 ?>
             </div> <!-- row end.// -->
-
 
             <nav class="mt-4" aria-label="Page navigation sample">
             <ul class="pagination">

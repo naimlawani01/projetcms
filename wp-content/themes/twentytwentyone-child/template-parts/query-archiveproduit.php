@@ -4,7 +4,7 @@ $arguments = [
     'post_type' => 'vetement',
     'post__not_in' => [get_the_ID()],
     'orderby'        => 'rand',
-    'posts_per_page'=>3,
+    'posts_per_page'=>5,
     'tax_query' => [
         [
             'taxonomy' => 'genre',
@@ -28,17 +28,16 @@ if($produits->have_posts()):?>
         </ul>
     </nav>
     <div class="row">
-        <div class="offset-md-2 col-md-8">
+        <div class="col-md-12">
             <div class="row">
                 <?php 
                 while($produits->have_posts()):
                 $produits->the_post();
                 ?>
-            
                     <a href="<?php the_permalink(); ?>?genre=<?= $_GET['genre'] ?>">
-                        <div class="card border-0 col-sm-4 py-2">
-                            <div style="height: 350px; max-height: 350px;">
-                                <img class="card-img-top" height="100%" src="<?php the_post_thumbnail_url();?>">
+                        <div class="card border-0 col-sm-3 py-2">
+                            <div style=" height: 350px;">
+                                <img class="card-img-top img-fluid" height="100%" src="<?php the_post_thumbnail_url();?>">
                             </div>
                             <div class="card-body">
                                 <h4 class="card-title" ><?php the_terms( get_the_ID() , 'marque' ); ?></h4>
