@@ -3,18 +3,19 @@
     if($term->slug=='homme'){
 
         $type_vetements = get_terms(['taxonomy'=>'type_vetment_homme']);
+        $type_chaussures = get_terms(['taxonomy'=>'type_chaussure_homme']);
+
+    }elseif($term->slug=='femme'){
+
+        $type_vetements = get_terms(['taxonomy'=>'type_vetement_femme']);
+        $type_chaussures = get_terms(['taxonomy'=>'type_chaussure_femme']);
+
+    }elseif($term->slug=='enfant'){
+
+        $type_vetements = get_terms(['taxonomy'=>'type_vetement_enfant']);
+        $type_chaussures = get_terms(['taxonomy'=>'type_chaussure_enfant']);
     }
-    if($term->slug=='femme'){
 
-        $type_vetements = get_terms(['taxonomy'=>'type_vetment_femme']);
-    }
-    if($term->slug=='enfant'){
-
-        $type_vetements = get_terms(['taxonomy'=>'type_vetment_enfant']);
-    }
-
-
-    $type_chaussures= get_terms(['taxonomy'=> 'type_chaussures']);
   
 ?>
 <div class="navbard">
@@ -34,7 +35,7 @@
             <a class="nav-link active text-reset dropbtn" href="<?php echo get_post_type_archive_link('vetement').'?genre='.$term->slug; ?>">Vêtements </a>
             <div class="dropdown-content">
                 <?php foreach ($type_vetements as $type_vetement): ?>
-                    <a href="<?= get_term_link($type_vetement) ?>"> <?= $type_vetement->name ?></a>
+                    <a href="<?= get_term_link($type_vetement) ?>"><?= $type_vetement->name ?></a>
                 <?php endforeach;?>
             </div>
         </div>
