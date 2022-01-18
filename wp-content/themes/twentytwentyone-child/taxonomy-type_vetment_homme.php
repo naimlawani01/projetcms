@@ -1,6 +1,7 @@
 <?php get_header();
-$term = get_queried_object();
-set_query_var( 'term', $term );
+
+$term= get_the_terms(get_the_ID(),'genre');
+set_query_var( 'term', $term[0] );
 get_template_part('template-parts/menu_type', 'term');
 ?>
 
@@ -28,7 +29,6 @@ if(isset($_GET['sortby']) && !empty($_GET['sortby'])){
                         $_GET['genre']
                     ]
                 ]
-
             ]
         ];
         $produits = new WP_Query($arguments);
@@ -104,11 +104,11 @@ if(isset($_GET['sortby']) && !empty($_GET['sortby'])){
             <div class="row">
                 <?php
 
-                if ($produits->have_posts() ) {
+                if (have_posts() ) {
 
                     // Load posts loop.
-                    while ($produits->have_posts() ) {
-                        $produits->the_post();
+                    while (have_posts() ) {
+                        the_post();
                         
                 ?>
                     <a href="<?php the_permalink(); ?>?genre=<?= $_GET['genre'] ?>">

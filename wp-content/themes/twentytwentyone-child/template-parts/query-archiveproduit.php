@@ -1,16 +1,26 @@
 <?php
 $curentPost = get_post_type();
+$the_term= get_the_terms(get_the_ID(),'type_vetement');
+
 $arguments = [
     'post_type' => $curentPost,
     'post__not_in' => [get_the_ID()],
     'orderby'        => 'rand',
     'posts_per_page'=>4,
     'tax_query' => [
+        'relation'=> 'AND',
         [
             'taxonomy' => 'genre',
             'field' => 'slug',
             'terms' => [
                 $_GET['genre']
+            ]
+            ],
+        [
+            'taxonomy' => 'type_vetement',
+            'field' => 'slug',
+            'terms' => [
+                $the_term[0]->slug
             ]
         ]
     ]
@@ -18,11 +28,11 @@ $arguments = [
 $produits = new WP_Query($arguments);
 if($produits->have_posts()):?>
 <div class="container">
-    <nav style="font-weight: 400;" class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav style="font-weight: 400;" class="navbar navbar-expand-lg navbar-light ">
 
         <ul class="navbar-nav mx-auto">
             <li class="nav-item">
-                <p>Recommendations</p>
+                <p>Recommandations</p>
             </li>
             
         </ul>
