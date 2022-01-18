@@ -1,16 +1,11 @@
-<?php get_header(); ?>
+<?php get_header();
+$term = get_queried_object();
+set_query_var( 'term', $term );
+get_template_part('template-parts/menu_type', 'term');
+?>
+
 <!-- ========================= SECTION PAGETOP ========================= -->
-<section class="section-pagetop bg">
-<div class="container">
-	<nav>
-        <ol class="breadcrumb text-white">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Best category</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Great articles</li>
-        </ol>  
-	</nav>
-</div> <!-- container //  -->
-</section>
+
 <!-- ========================= SECTION INTRO END// ========================= -->
 <?php
 if(isset($_GET['sortby']) && !empty($_GET['sortby'])){
@@ -120,7 +115,7 @@ if(isset($_GET['sortby']) && !empty($_GET['sortby'])){
                             <div style="height: 350px; max-height: 350px;">
                                 <img class="card-img-top" height="100%" src="<?php the_post_thumbnail_url();?>">
                             </div>
-                            <div class="card-body">
+                            <div id="lamarqueflex" class="card-body">
                                 <h4 class="card-title" ><?php the_terms( get_the_ID() , 'marque' ); ?></h4>
                                 <p class="card-text"><?php the_title();?></p>
                             </div>

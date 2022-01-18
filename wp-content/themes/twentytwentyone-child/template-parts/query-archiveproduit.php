@@ -1,10 +1,10 @@
 <?php
-
+$curentPost = get_post_type();
 $arguments = [
-    'post_type' => 'vetement',
+    'post_type' => $curentPost,
     'post__not_in' => [get_the_ID()],
     'orderby'        => 'rand',
-    'posts_per_page'=>5,
+    'posts_per_page'=>4,
     'tax_query' => [
         [
             'taxonomy' => 'genre',
@@ -35,11 +35,11 @@ if($produits->have_posts()):?>
                 $produits->the_post();
                 ?>
                     <a href="<?php the_permalink(); ?>?genre=<?= $_GET['genre'] ?>">
-                        <div class="card border-0 col-sm-3 py-2">
+                        <div class="card border-0 col-xs-12 col-lg-3 col-sm-6 col-md-4 py-2">
                             <div style=" height: 350px;">
                                 <img class="card-img-top img-fluid" height="100%" src="<?php the_post_thumbnail_url();?>">
                             </div>
-                            <div class="card-body">
+                            <div id="lamarqueflex" class=" card-body">
                                 <h4 class="card-title" ><?php the_terms( get_the_ID() , 'marque' ); ?></h4>
                                 <p class="card-text"><?php the_title();?></p>
                             </div>

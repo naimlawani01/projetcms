@@ -1,14 +1,10 @@
 <?php get_header(); ?>
-<?php $term = get_queried_object()?>
+<?php 
+    $term = get_queried_object();
+    set_query_var( 'term', $term );
+    get_template_part('template-parts/menu_type', 'term');
+?>
 
-    <ul class="nav mx-auto mr-auto mt-2 mt-lg-0 justify-content-center">
-        <li class="nav-item">
-            <a class="nav-link active text-reset" href="<?php echo get_post_type_archive_link('chaussure').'?genre='.$term->slug; ?>">Chaussures </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active text-reset" href="<?php echo get_post_type_archive_link('vetement').'?genre='.$term->slug; ?>">Vêtement</a>
-        </li>
-    </ul>
 
     <div class="container">
     

@@ -33,9 +33,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mx-auto">
-			<li class="nav-item">
-				<a class="navbar-brand" href="<?php echo get_home_url(); ?>"> <i class="fa fa-outdent fa-x" aria-hidden="true"></i> </a>
-			</li>
 			<?php foreach($genres as $genre):?>
 				<li class="nav-item">
 					<a class="nav-link active" aria-current="page" href="<?= get_term_link($genre) ; ?>"><?= $genre->name ?></a>
