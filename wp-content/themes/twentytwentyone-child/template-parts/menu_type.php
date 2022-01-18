@@ -1,9 +1,46 @@
+<?php 
+    #$type_vetements= get_terms(['taxonomy'=> 'type_vetement']);
+    if($term->slug=='homme'){
+
+        $type_vetements = get_terms(['taxonomy'=>'type_vetment_homme']);
+    }
+    if($term->slug=='femme'){
+
+        $type_vetements = get_terms(['taxonomy'=>'type_vetment_femme']);
+    }
+    if($term->slug=='enfant'){
+
+        $type_vetements = get_terms(['taxonomy'=>'type_vetment_enfant']);
+    }
+
+
+    $type_chaussures= get_terms(['taxonomy'=> 'type_chaussures']);
+  
+?>
 <div class="navbard">
 
     <ul class="nav mx-auto mr-auto mt-2 mt-lg-0 justify-content-center">
         <div class="dropdown">
 
-            <button class="nav-link active text-reset dropbtn" href="<?php echo get_post_type_archive_link('chaussure').'?genre='.$term->slug; ?>">Chaussures </button>
+            <a class="nav-link active text-reset dropbtn" href="<?php echo get_post_type_archive_link('chaussure').'?genre='.$term->slug; ?>">Chaussures </a>
+            <div class="dropdown-content">
+                <?php foreach ($type_chaussures as $type_chaussure): ?>
+                <a href="<?= get_term_link($type_chaussure) ?>"> <?= $type_chaussure->name ?></a>
+                <?php endforeach;?>
+            </div>
+        </div>
+        <div class="dropdown">
+
+            <a class="nav-link active text-reset dropbtn" href="<?php echo get_post_type_archive_link('vetement').'?genre='.$term->slug; ?>">Vêtements </a>
+            <div class="dropdown-content">
+                <?php foreach ($type_vetements as $type_vetement): ?>
+                    <a href="<?= get_term_link($type_vetement) ?>"> <?= $type_vetement->name ?></a>
+                <?php endforeach;?>
+            </div>
+        </div>
+        <div class="dropdown">
+
+            <a class="nav-link active text-reset dropbtn" href="#">Sacs </a>
             <div class="dropdown-content">
                 <a href="#">Link 1</a>
                 <a href="#">Link 2</a>
@@ -12,7 +49,7 @@
         </div>
         <div class="dropdown">
 
-            <button class="nav-link active text-reset dropbtn" href="<?php echo get_post_type_archive_link('vetement').'?genre='.$term->slug; ?>">Chaussures </button>
+            <a class="nav-link active text-reset dropbtn" href="#">Accessoires </a>
             <div class="dropdown-content">
                 <a href="#">Link 1</a>
                 <a href="#">Link 2</a>
@@ -21,25 +58,7 @@
         </div>
         <div class="dropdown">
 
-            <button class="nav-link active text-reset dropbtn" href="#">Sacs </button>
-            <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-            </div>
-        </div>
-        <div class="dropdown">
-
-            <button class="nav-link active text-reset dropbtn" href="#">Accessoires </button>
-            <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-            </div>
-        </div>
-        <div class="dropdown">
-
-            <button class="nav-link active text-reset dropbtn" href="#">Montres </button>
+            <a class="nav-link active text-reset dropbtn" href="#">Montres </a>
             <div class="dropdown-content">
                 <a href="#">Link 1</a>
                 <a href="#">Link 2</a>
