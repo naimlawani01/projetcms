@@ -141,7 +141,9 @@ if(isset($_GET['sortby']) && !empty($_GET['sortby'])){
                         previous_posts_link();
                     ?>
                  </li>
-                <li class="page-item"><?php next_posts_link(); ?></li>
+                <li class="page-item">
+                    <?php next_posts_link(); ?>
+                </li>
             </ul>
             </nav>
 
