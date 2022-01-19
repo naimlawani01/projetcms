@@ -28,10 +28,8 @@
 				<div class="col-md-4 mx-auto">
 
 					<!-- Content -->
-					<h5 class="font-weight-bold text-uppercase mt-3 mb-4">Footer Content</h5>
-					<p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-					consectetur
-					adipisicing elit.</p>
+					<h5 class="font-weight-bold text-uppercase mt-3 mb-4">FIMB</h5>
+					<p>Nous sommes uns site de vente d'article de mode. </p>
 
 				</div>
 				<!-- Grid column -->
@@ -42,21 +40,29 @@
 				<div class="col-md-2 mx-auto">
 
 					<!-- Links -->
-					<h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+
+				</div>
+				<!-- Grid column -->
+
+				<hr class="clearfix w-100 d-md-none">
+
+				<!-- Grid column -->
+				<div class="col-md-2 mx-auto">
+
+					<!-- Links -->
+					<h5 class="font-weight-bold text-uppercase mt-3 mb-4">Accueil</h5>
 
 					<ul class="list-unstyled">
 						<li>
-							<a href="#!">Link 1</a>
+							<a class="text-reset" href="#!">Homme </a>
 						</li>
 						<li>
-							<a href="#!">Link 2</a>
+							<a class="text-reset" href="#!">Femme </a>
 						</li>
 						<li>
-							<a href="#!">Link 3</a>
+							<a class="text-reset" href="#!">Enfant </a>
 						</li>
-						<li>
-							<a href="#!">Link 4</a>
-						</li>
+
 					</ul>
 
 				</div>
@@ -68,46 +74,20 @@
 				<div class="col-md-2 mx-auto">
 
 					<!-- Links -->
-					<h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+					<h5 class="font-weight-bold text-uppercase mt-3 mb-4">A propos de nous</h5>
 
 					<ul class="list-unstyled">
 						<li>
-							<a href="#!">Link 1</a>
+							<a href="#!" class="text-reset">Nous contacter </a>
 						</li>
 						<li>
-							<a href="#!">Link 2</a>
+							<a href="#!" class="text-reset">Termes & conditions </a>
 						</li>
 						<li>
-							<a href="#!">Link 3</a>
+							<a href="#!" class="text-reset">Politique de confidentialité </a>
 						</li>
 						<li>
-							<a href="#!">Link 4</a>
-						</li>
-					</ul>
-
-				</div>
-				<!-- Grid column -->
-
-				<hr class="clearfix w-100 d-md-none">
-
-				<!-- Grid column -->
-				<div class="col-md-2 mx-auto">
-
-					<!-- Links -->
-					<h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-
-					<ul class="list-unstyled">
-						<li>
-							<a href="#!">Link 1</a>
-						</li>
-						<li>
-							<a href="#!">Link 2</a>
-						</li>
-						<li>
-							<a href="#!">Link 3</a>
-						</li>
-						<li>
-							<a href="#!">Link 4</a>
+							<a href="#!" class="text-reset">Boutiques partenaires</a>
 						</li>
 					</ul>
 
@@ -166,8 +146,8 @@
 		<!-- Social buttons -->
 
 		<!-- Copyright -->
-		<div class="footer-copyright text-center py-3">© 2020 Copyright:
-			<a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+		<div class="footer-copyright text-center py-3">© 2022 Copyright:
+			<a class="text-reset" href="https://mdbootstrap.com/"> CMS Wordpress <i class="fa fa-wordpress" aria-hidden="true"></i></a>
 		</div>
 
 	</footer><!-- #colophon -->

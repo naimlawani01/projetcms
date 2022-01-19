@@ -1,26 +1,16 @@
 <?php
 $curentPost = get_post_type();
-$the_term= get_the_terms(get_the_ID(),'type_vetement');
-
 $arguments = [
     'post_type' => $curentPost,
     'post__not_in' => [get_the_ID()],
     'orderby'        => 'rand',
     'posts_per_page'=>4,
     'tax_query' => [
-        'relation'=> 'AND',
         [
             'taxonomy' => 'genre',
             'field' => 'slug',
             'terms' => [
                 $_GET['genre']
-            ]
-            ],
-        [
-            'taxonomy' => 'type_vetement',
-            'field' => 'slug',
-            'terms' => [
-                $the_term[0]->slug
             ]
         ]
     ]

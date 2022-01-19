@@ -27,7 +27,7 @@
 <?php $genres= get_terms(['taxonomy'=> 'genre']);?>
 <nav style="font-weight: 450; background-color: #fff; border-bottom: 1px solid #f6f6f6" class="navbar navbar-expand-lg navbar-light bg-blue sticky-top" >
   <div class="container ">
-  	<a class="navbar-brand" href=""><img width="54px" src="<?php echo get_template_directory_uri() . '/logo.svg' ?>" alt=""></a>
+  	<a class="navbar-brand" href="<?php echo home_url();?>"><img width="54px" src="<?php echo get_template_directory_uri() . '/logo.svg' ?>" alt=""></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -60,8 +60,6 @@
 	<div id="content" class="site-content">
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
-
-
 
 
 

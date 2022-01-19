@@ -1,6 +1,7 @@
 <?php get_header();
 
 $term= get_the_terms(get_the_ID(),'genre');
+ $curen_term = get_queried_object(); 
 set_query_var( 'term', $term[0] );
 get_template_part('template-parts/menu_type', 'term');
 ?>
@@ -22,13 +23,21 @@ if(isset($_GET['sortby']) && !empty($_GET['sortby'])){
             'order' => 'DESC',
             'paged' => $paged,
             'tax_query' => [
+                'relation' => 'AND',
                 [
                     'taxonomy' => 'genre',
                     'field' => 'slug',
                     'terms' => [
-                        $_GET['genre']
+                        $_GET['ge']
                     ]
-                ]
+                ],
+                [
+                    'taxonomy' => 'type_vetement',
+                    'field' => 'slug',
+                    'terms' => [
+                        $curen_term->slug
+                    ]
+                ],
             ]
         ];
         $produits = new WP_Query($arguments);
@@ -43,16 +52,25 @@ if(isset($_GET['sortby']) && !empty($_GET['sortby'])){
             'order' => 'ASC',
             'paged' => $paged,
             'tax_query' => [
+                'relation' => 'AND',
                 [
                     'taxonomy' => 'genre',
                     'field' => 'slug',
                     'terms' => [
-                        $_GET['genre']
+                        $_GET['ge']
                     ]
-                ]
+                ],
+                [
+                    'taxonomy' => 'type_vetement',
+                    'field' => 'slug',
+                    'terms' => [
+                        $curen_term->slug
+                    ]
+                ],
             ]
         ];
         $produits = new WP_Query($arguments);
+ 
     }
 }else{
 
@@ -61,18 +79,20 @@ if(isset($_GET['sortby']) && !empty($_GET['sortby'])){
     $arguments = [
         'post_type' => 'vetement',
         'posts_per_page'=>8,
+        'orderby' => 'meta_value_num',
         'paged' => $paged,
         'tax_query' => [
             [
                 'taxonomy' => 'genre',
                 'field' => 'slug',
                 'terms' => [
-                    $_GET['genre']
+                    $_GET['ge']
                 ]
-            ]
+            ],
         ]
     ];
     $produits = new WP_Query($arguments);
+
 }
 
 
@@ -92,9 +112,9 @@ if(isset($_GET['sortby']) && !empty($_GET['sortby'])){
                                     Trier par
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="http://projetcms.test/vetement/?genre=<?=$_GET['genre']?>">Les plus recents</a>
-                                    <a class="dropdown-item" href="http://projetcms.test/vetement/?genre=<?=$_GET['genre']?>&sortby=priceDesc">Prix: Décroissant</a>
-                                    <a class="dropdown-item" href="http://projetcms.test/vetement/?genre=<?=$_GET['genre']?>&sortby=priceAsc">Prix: Croissant</a>
+                                    <a class="dropdown-item" href="&ge=homme">Les plus recents</a>
+                                    <a class="dropdown-item" href="?ge=homme&sortby=priceDesc">Prix: Décroissant</a>
+                                    <a class="dropdown-item" href="?ge=homme&sortby=priceAsc">Prix: Croissant</a>
                                 </div>
                             </div>
 
@@ -111,7 +131,7 @@ if(isset($_GET['sortby']) && !empty($_GET['sortby'])){
                         the_post();
                         
                 ?>
-                    <a href="<?php the_permalink(); ?>?genre=<?= $_GET['genre'] ?>">
+                    <a href="<?php the_permalink(); ?>?genre=homme">
                         <div class="card border-0 col-lg-3 col-md-4 col-sm-6 py-2 py-2">
                             <div style="height: 350px; max-height: 350px;">
                                 <img class="card-img-top" height="100%" src="<?php the_post_thumbnail_url();?>">

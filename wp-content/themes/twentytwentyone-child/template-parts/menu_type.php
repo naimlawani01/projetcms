@@ -35,7 +35,7 @@
             <a class="nav-link active text-reset dropbtn" href="<?php echo get_post_type_archive_link('vetement').'?genre='.$term->slug; ?>">Vêtements </a>
             <div class="dropdown-content">
                 <?php foreach ($type_vetements as $type_vetement): ?>
-                    <a href="<?= get_term_link($type_vetement) ?>"><?= $type_vetement->name ?></a>
+                    <a href="<?= get_term_link($type_vetement) ?>?sorte=bien"><?= $type_vetement->name ?></a>
                 <?php endforeach;?>
             </div>
         </div>

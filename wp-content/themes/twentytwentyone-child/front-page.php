@@ -1,43 +1,69 @@
 <?php get_header();?>
-<div class="container">
+
+    <div id='imghome' >
+        <p id='pimghome'>DES STYLES PRINTANIERS</p>
+        <img class='field' src="<?php echo get_template_directory_uri() . '/monclerhome.jpeg' ?>" alt="moncle">
+    </div>
     
-    <div class="row">
-        <div class=" card border-0 my-5">
-            <div class="row g-0">
-            <div class="col-md-6">
-                <img   src="https://cdn.pixabay.com/photo/2016/12/12/09/29/mannequin-1901090_960_720.jpg" class="img-fluid" alt="...">
-            </div>
-            <div class="col-md-6">
-                <div  class="card-body text-center" >
-                <h2 class="card-title">DERNIÈRE DÉMARQUE : - 20 % SUPPLÉMENTAIRES</h2>
-                <p style="font-size: 22px;" class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-            </div>
-            </div>
+    <div id='flexgenre'>
+        <div ><p id='phomme'>HOMME</p>
+            <img id='imghomme' src="<?php echo get_template_directory_uri() . '/monclerhomme.jpeg' ?>" alt="monclerhomme">
         </div>
-        <br>
-        <div class="card border-0 my-5 ">
-            <div class="row g-0">
-                <div class="col-md-6">
-                    <div class="card-body text-center" >
-                        <h2 class="card-title ">DERNIÈRE DÉMARQUE : - 20 % SUPPLÉMENTAIRES</h2>
-                        <p style="font-size: 22px;" class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <img src="https://cdn.pixabay.com/photo/2016/12/12/09/29/mannequin-1901090_960_720.jpg" class="img-fluid" alt="...">
-                </div>
-            </div>
+        
+        <div >
+            <p id='pfemme'>FEMME</p>
+            <img id='imgfemme' src="<?php echo get_template_directory_uri() . '/monclerfemme.jpeg' ?>" alt="monclerfemme">
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12 my-5">
-            <div class=" text-center">
-                <h2>Latest News</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod temp incididunt ut labore et dolore magna aliquait sed do eiusmod temp incididunt ut labore et dolore magna aliqua. </p>
+
+    <div id='headerflex'>
+        <div id='titrenouveauté'>NOUVEAUTÉS</div>
+        <div id='separation'></div>
+        <div id='flexhommefemmeheaderflex'>
+            <p>HOMME</p>
+            <p>FEMME</p>
+        </div> 
+    </div>
+
+
+
+
+    <?php  
+get_template_part('template-parts/newhomme');
+    $arguments = [
+    'post_type' => 'vetement',
+    'posts_per_page' => 4,
+
+    
+    ];
+
+    $petitposts = new WP_Query($arguments); ?>
+
+    <?php 
+    if ($petitposts->have_posts()) :?>
+        <div class='row' id='rowmodif'>
+            <?php while($petitposts->have_posts()) : ?>
+            <?php $petitposts->the_post(); ?>
+
+
+            <div class='col-md-3 col-lg-3 col-sm-6' id='flexhomepage'>
+
+                <div id='lesimages3'><?php  the_post_thumbnail();?></div>
+
+                <div id='titrepetitflex2'>
+                    <?php the_title(); ?>
+                </div>
+
             </div>
+
+            
+            <?php endwhile;?>
         </div>
-    </div> 
-</div>
+
+
+
+    <?php endif; ?>
+
+
 
 <?php get_footer();?>

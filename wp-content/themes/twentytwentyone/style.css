@@ -1,108 +1,4 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap');
-
-/*
-Theme Name: Twenty Twenty-One
-Theme URI: https://wordpress.org/themes/twentytwentyone/
-Author: the WordPress team
-Author URI: https://wordpress.org/
-Description: Twenty Twenty-One is a blank canvas for your ideas and it makes the block editor your best brush. With new block patterns, which allow you to create a beautiful layout in a matter of seconds, this theme’s soft colors and eye-catching — yet timeless — design will let your work shine. Take it for a spin! See how Twenty Twenty-One elevates your portfolio, business website, or personal blog.
-Requires at least: 5.3
-Tested up to: 5.8
-Requires PHP: 5.6
-Version: 1.4
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: twentytwentyone
-Tags: one-column, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready
-
-Twenty Twenty-One WordPress Theme, (C) 2020 WordPress.org
-Twenty Twenty-One is distributed under the terms of the GNU GPL.
-*/
-
-
-/**
- * SETTINGS
- * File-header..........The file header for the themes style.css file.
- * Fonts................Any font files, if the project needs specific fonts.
- * Global...............Project-specific, globally available variables.
- *
- * TOOLS
- * Functions............Global functions.
- * Mixins...............Global mixins.
- *
- * GENERIC
- * Normalize.css........Normalise browser defaults.
- * Breakpoints..........Mixins and variables for responsive styles
- * Vertical-margins.....Vertical spacing for the main components.
- * Reset................Reset specific elements to make them easier to style in other contexts.
- * Clearings............Clearings for the main components.
- *
- * ELEMENTS
- * Blockquote...........Default blockquote.
- * Forms................Element-level form styling.
- * Headings.............H1–H6
- * Links................Default links.
- * Lists................Default lists.
- * Media................Images, Figure, Figcaption, Embed, iFrame, Objects, Video.
- *
- * BLOCKS
- * Audio................Specific styles for the audio block.
- * Button...............Specific styles for the button block.
- * Code.................Specific styles for the code block.
- * Columns..............Specific styles for the columns block.
- * Cover................Specific styles for the cover block.
- * File.................Specific styles for the file block.
- * Gallery..............Specific styles for the gallery block.
- * Group................Specific styles for the group block.
- * Heading..............Specific styles for the heading block.
- * Image................Specific styles for the image block.
- * Latest comments......Specific styles for the latest comments block.
- * Latest posts.........Specific styles for the latest posts block.
- * Legacy...............Specific styles for the legacy gallery.
- * List.................Specific styles for the list block.
- * Media text...........Specific styles for the media and text block.
- * Navigation...........Specific styles for the navigation block.
- * Paragraph............Specific styles for the paragraph block.
- * Pullquote............Specific styles for the pullquote block.
- * Quote................Specific styles for the quote block.
- * Search...............Specific styles for the search block.
- * Separator............Specific styles for the separator block.
- * Spacer...............Specific styles for the spacer block.
- * Table................Specific styles for the table block.
- * Verse................Specific styles for the verse block.
- * Video................Specific styles for the video block.
- * Utilities............Block alignments.
- *
- * COMPONENTS
- * Header...............Header styles.
- * Footer...............Footer styles.
- * Comments.............Comment styles.
- * Archives.............Archive styles.
- * 404..................404 styles.
- * Search...............Search styles.
- * Navigation...........Navigation styles.
- * Footer Navigation....Footer Navigation styles.
- * Pagination...........Pagination styles.
- * Single...............Single page and post styles.
- * Posts and pages......Misc, sticky post styles.
- * Entry................Entry, author biography.
- * Widget...............Widget styles.
- * Editor...............Editor styles.
- *
- * UTILITIES
- * A11y.................Screen reader text, prefers reduced motion etc.
- * Color Palette........Classes for the color palette colors.
- * Editor Font Sizes....Editor Font Sizes.
- * Measure..............The width of a line of text, in characters.
- */
-
-
-/* Categories 01 to 03 are the basics. */
-
-
-/* Variables */
-
 
 /*
 Theme Name: Twenty Twenty-One
@@ -445,7 +341,7 @@ body {
     flex-direction: row;
     margin-bottom: 100px;
     margin-left: 40px;
-    height: 700px;
+    height: 750px;
 }
 
 #flextitreprix {
@@ -454,21 +350,14 @@ body {
     height: 30px;
 }
 
-.tailleText {
-    font-weight: 500;
-    margin-bottom: 5px;
-}
-
 #thesingleimage {
-    align-self: center;
     width: 530px;
-    height: 430px;
+    height: 500px;
 }
 
 #ladescription {
-    margin-bottom: 10px;
     width: 480px;
-    font-size: 16px;
+    font-size: 12px;
 }
 
 #lesimages {
@@ -479,12 +368,15 @@ body {
     width: 200px;
 }
 
+#lesimages3 {
+    width: 105%;
+}
+
 #letitre {
     font-size: 16px;
 }
 
-#leprix p {
-    font-weight: 600;
+#leprix {
     font-size: 16px;
 }
 
@@ -492,17 +384,14 @@ body {
     padding-bottom: 10px;
 }
 
-#lamarqueflex {
-    font-weight: 500;
+.navmodif {
+    padding: 0
 }
 
 #rowmodif {
     margin-left: 30px;
     margin-right: 50px;
-}
-
-#lamarqueflex {
-    padding: 0, 0, 0, 0;
+    margin-bottom: 54px;
 }
 
 #lamarqueflex a {
@@ -516,6 +405,96 @@ body {
     flex-direction: row;
     justify-content: flex-start;
     column-gap: 20px;
+}
+
+#imghome {
+    width: 100%;
+    height: 800px;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+#imghomme {
+    width: 99%;
+}
+
+#imgfemme {
+    width: 99%;
+}
+
+.field {
+    width: 100%;
+}
+
+#flexgenre {
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 44px;
+}
+
+#headerflex {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#titrenouveauté {
+    font-weight: 300;
+    font-size: 28px;
+}
+
+#flexhommefemmeheaderflex {
+    display: flex;
+    flex-direction: row;
+    width: 10%;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+#flexhommefemmeheaderflex p {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+#separation {
+    height: 1px;
+    width: 25%;
+    background-color: #f5f5f5;
+    margin-bottom: 2px;
+}
+
+#phomme {
+    position: absolute;
+    color: white;
+    font-weight: 300;
+    font-size: 44px;
+    left: 280px;
+    margin-top: 570px;
+}
+
+#pfemme {
+    position: absolute;
+    color: white;
+    font-weight: 300;
+    font-size: 44px;
+    margin-left: 280px;
+    margin-top: 570px;
+}
+
+#pimghome {
+    position: absolute;
+    color: white;
+    font-weight: 300;
+    font-size: 60px;
+    margin: 500px 0px 0px 340px
+}
+
+#titrepetitflex2 {
+    font-size: 16px;
+    margin-top: 8px;
+    font-weight: 350;
 }
 
 

@@ -12,12 +12,12 @@
         <div class=" card border-0 my-5">
             <div class="row g-0">
             <div class="col-md-6">
-                <img   src="https://cdn.pixabay.com/photo/2016/12/12/09/29/mannequin-1901090_960_720.jpg" class="img-fluid" alt="...">
+                <img   src="<?php echo get_template_directory_uri() . '/imgtaxg.jpeg' ?>" class="img-fluid" alt="...">
             </div>
             <div class="col-md-6">
                 <div  class="card-body text-center" >
                 <h2 class="card-title">DERNIÈRE DÉMARQUE : - 20 % SUPPLÉMENTAIRES</h2>
-                <p style="font-size: 22px;" class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p style="font-size: 20px;" class="card-text">Ne ratez pas la plus vaste sélection de pièces de grandes marques parmi les soldes FARFETCH, avec une remise finale de 20 % supplémentaire. Sur une sélection d'articles et pour une durée limitée uniquement. Remise appliquée automatiquement lors du paiement.</p>
                 </div>
             </div>
             </div>
@@ -27,12 +27,13 @@
             <div class="row g-0">
                 <div class="col-md-6">
                     <div class="card-body text-center" >
-                        <h2 class="card-title ">DERNIÈRE DÉMARQUE : - 20 % SUPPLÉMENTAIRES</h2>
-                        <p style="font-size: 22px;" class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <h2 class="card-title ">NOUVEAUTÉS À SUPERPOSERS</h2>
+                        <p>Vestes de mi-saison, maille douillette, t-shirts & pantalons indispensables.</p>
+                        <a class="btn  btn-light btn-outline-secondary text-reset" href="<?php echo get_post_type_archive_link('chaussure').'?genre='.$term->slug; ?>">Voir la selection </a>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <img src="https://cdn.pixabay.com/photo/2016/12/12/09/29/mannequin-1901090_960_720.jpg" class="img-fluid" alt="...">
+                    <img src="<?php echo get_template_directory_uri() . '/imgtaxg1.webp' ?>" class="img-fluid" alt="...">
                 </div>
             </div>
         </div>
@@ -41,8 +42,11 @@
         <div class="col-md-12 my-5">
             <div class=" text-center">
                 <h2>Latest News</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod temp incididunt ut labore et dolore magna aliquait sed do eiusmod temp incididunt ut labore et dolore magna aliqua. </p>
+                <p>. </p>
             </div>
+            <?php
+            get_template_part('template-parts/querry-genre');
+            ?>
         </div>
     </div> 
 </div>

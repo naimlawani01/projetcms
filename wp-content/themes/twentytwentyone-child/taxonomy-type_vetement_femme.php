@@ -111,7 +111,7 @@ if(isset($_GET['sortby']) && !empty($_GET['sortby'])){
                         the_post();
                         
                 ?>
-                    <a href="<?php the_permalink(); ?>?genre=<?= $_GET['genre'] ?>">
+                    <a href="<?php the_permalink(); ?>?genre=femme">
                         <div class="card border-0 col-lg-3 col-md-4 col-sm-6 py-2 py-2">
                             <div style="height: 350px; max-height: 350px;">
                                 <img class="card-img-top" height="100%" src="<?php the_post_thumbnail_url();?>">
